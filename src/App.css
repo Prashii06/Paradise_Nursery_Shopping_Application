@@ -1,0 +1,274 @@
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  margin-top: 0;
+  background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #e0f7e9;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.navbar a:hover {
+  color: #e0f7e9;
+}
+
+.navbar a.cart-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar a.cart-link span {
+  background-color: #e74c3c;
+  color: white;
+  font-size: 1rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50%;
+  line-height: 1;
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+.navbar a.cart-link:hover span {
+  transform: translateY(-4px) scale(1.1);
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1rem;
+  min-height: 90vh;
+  width: 99vw;
+  background-image: linear-gradient(rgba(225, 152, 152, 0.5), rgba(136, 164, 23, 0.5)), url("D:\Prachi\New folder\Paradise-Nursery-Shopping-Application\src\yousef-espanioly-AWBPaqzPACA-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.home > * {
+  position: relative;
+  z-index: 2;
+}
+
+.home h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  margin: 1rem 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: fadeInDown 1s ease-out;
+}
+
+.home p {
+  font-family: 'Lora', serif;
+  font-size: 1.25rem;
+  color: #e0f7e9;
+  margin: 0.75rem 0;
+  max-width: 700px;
+  line-height: 1.8;
+}
+
+.home .about-us-content {
+  font-size: 1.1rem;
+  color: #d0fbda;
+  margin: 1rem 0;
+  line-height: 2;
+  max-width: 600px;
+}
+
+.home button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.home button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.product-card h3 {
+  color: #1b5e20;
+  margin: 0.5rem 0;
+}
+
+.product-card p {
+  color: #4a4a4a;
+  margin: 0.25rem 0;
+}
+
+.product-card button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.product-card button:disabled {
+  background-color: #a5d6a7;
+  cursor: not-allowed;
+}
+
+.product-card button:hover:not(:disabled) {
+  background-color: #45a049;
+}
+
+.about-us-content {
+  color: #4a4a4a;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .navbar a {
+    font-size: 1.1rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .navbar a.cart-link span {
+    font-size: 0.9rem;
+    padding: 0.15rem 0.5rem;
+  }
+
+  .home h1 {
+    font-size: 2.5rem;
+  }
+
+  .home p {
+    font-size: 1rem;
+  }
+
+  .home .about-us-content {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .home button {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar a {
+    font-size: 1rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .home h1 {
+    font-size: 2rem;
+  }
+
+  .home p {
+    font-size: 0.9rem;
+  }
+
+  .home button {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
