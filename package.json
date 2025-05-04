@@ -1,6 +1,6 @@
 {
   "name": "shoppingcart",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://prashii06.github.io/Paradise_Nursery_Shopping_Application/",
