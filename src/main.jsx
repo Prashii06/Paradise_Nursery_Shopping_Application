@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { HashRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store';
 import App from './App';
-import './index.css';
+import './App.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <HashRouter basename="/shoppingreact">
-      <App />
-    </HashRouter>
-  </React.StrictMode>
+  <Provider store={store}>
+    <App />
+  </Provider>
 );
